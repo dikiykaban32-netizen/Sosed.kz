@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14532d">
+  <meta name="description" content="Найди мастера или предложи свои услуги в Караганде.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Сосед KZ — услуги рядом</title>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="mark">С</div><div><b>Сосед KZ</b><small>Услуги рядом · Караганда</small></div></div>
+  <button class="outline" id="addTop">＋ Объявление</button>
+</header>
+<main>
+  <section class="hero">
+    <span class="eyebrow">СЕРВИС УСЛУГ В КАРАГАНДЕ</span>
+    <h1>Найди мастера<br><em>рядом с домом</em></h1>
+    <p>Проверяй объявления, сравнивай предложения и связывайся напрямую.</p>
+    <div class="search"><span>⌕</span><input id="search" placeholder="Например, сантехник или сварщик"></div>
+  </section>
+  <section class="section">
+    <div class="section-head"><h2>Категории</h2><span class="muted">Выбери услугу</span></div>
+    <div class="cats" id="categories"></div>
+  </section>
+  <section class="section">
+    <div class="section-head"><h2 id="listTitle">Объявления</h2><button class="link" id="allBtn">Все</button></div>
+    <div id="listings" class="listings"></div>
+  </section>
+  <section class="notice"><b>Ты мастер?</b><span>Добавь объявление бесплатно и найди новых клиентов в Караганде.</span><button id="addBottom">Разместить объявление</button></section>
+</main>
+<nav class="bottom">
+  <button class="navitem active" data-tab="home"><span>⌂</span>Главная</button>
+  <button class="navitem" data-tab="favorites"><span>♡</span>Избранное</button>
+  <button class="navitem" data-tab="about"><span>ⓘ</span>О сервисе</button>
+</nav>
+<div class="modal hidden" id="modal">
+  <div class="sheet">
+    <div class="sheet-head"><h2>Новое объявление</h2><button id="closeModal" class="close">✕</button></div>
+    <form id="listingForm">
+      <label>Название услуги<input name="title" required maxlength="70" placeholder="Например, Услуги электрика"></label>
+      <label>Категория<select name="category" id="categorySelect" required></select></label>
+      <label>Имя мастера<input name="name" required maxlength="40" placeholder="Как к вам обращаться"></label>
+      <label>Телефон / WhatsApp<input name="phone" required inputmode="tel" placeholder="+7 7XX XXX XX XX"></label>
+      <label>Район Караганды<input name="district" maxlength="50" placeholder="Например, Юго-Восток"></label>
+      <label>Цена<input name="price" maxlength="40" placeholder="От 5 000 ₸ или договорная"></label>
+      <label>Описание<textarea name="description" rows="3" maxlength="300" placeholder="Расскажите о своих услугах"></textarea></label>
+      <button class="primary full" type="submit">Опубликовать на этом телефоне</button>
+      <p class="hint">Пока объявление сохраняется только на этом устройстве. Общую базу подключим следующим этапом.</p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
